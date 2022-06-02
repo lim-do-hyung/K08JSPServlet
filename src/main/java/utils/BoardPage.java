@@ -33,12 +33,11 @@ public class BoardPage {
 		바로가기 링크를 화면에 출력한다.
 		 */
 		if(searchField==null || searchWord==null) {
-			pagingStr+="<ul class='pagination'>";
 			if(pageTemp!=1) {
 				pagingStr += " <li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=1" +"'>[첫 페이지]</a></li>";
 				pagingStr +="";
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" +(pageTemp-1)
-						+"'>[이전 블록]</a></li>";
+						+"'>[이전]</a></li>";
 			}
 			/*
 		각 페이지 번호로 바로가기 링크 출력
@@ -62,20 +61,18 @@ public class BoardPage {
 			//다음 페이지 블록 바로가기 링크 출력
 			if(pageTemp<= totalPages) {
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" +pageTemp
-						+"'>[다음 블록]</a></li>";
+						+"'>[다음]</a></li>";
 				pagingStr +="";
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" + totalPages
 						+"'>[마지막 페이지]</a></li>";
 			}
-			pagingStr+="</ul>";
 			
 		}else {
-			pagingStr+="<ul class='pagination'>";
 			if(pageTemp!=1) {
 				pagingStr += " <li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=1&searchField="+searchField+"&searchWord="+searchWord+"'>[첫 페이지]</a></li>";
 				pagingStr +="";
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" +(pageTemp-1) +"&searchField="+searchField+"&searchWord="+searchWord
-						+"'>[이전 블록]</a></li>";
+						+"'>[이전]</a></li>";
 			}
 			/*
 		각 페이지 번호로 바로가기 링크 출력
@@ -99,12 +96,11 @@ public class BoardPage {
 			//다음 페이지 블록 바로가기 링크 출력
 			if(pageTemp<= totalPages) {
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" +pageTemp
-						+"'>[다음 블록]</a></li>";
+						+"'>[다음]</a></li>";
 				pagingStr +="";
 				pagingStr += "<li class='page-item'><a class='page-link' href='" + reqUrl + "?pageNum=" + totalPages
 						+"'>[마지막 페이지]</a></li>";
 			}
-			pagingStr+="</ul>";
 		}
 		return pagingStr;
 	}

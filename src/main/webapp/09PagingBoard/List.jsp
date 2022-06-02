@@ -96,7 +96,7 @@ dao.close();
     </tr>   
     </table>
     </form>
-    <table border="1" width="90%">
+    <table border="1" width="90%" class="table table-dark table-hover">
         <tr>
             <th width="10%">번호</th>
             <th width="50%">제목</th>
@@ -154,8 +154,10 @@ else {
         		경로명을 통해 "경로명?pageNum=페이지번호"와 같은 바로가기
         		링크를 만들게 된다.
         	 -->
+        	<ul class='pagination justify-content-center'>
         	<%= BoardPage.pagingStr(totalCount, pageSize, 
         			blockPage, pageNum, request.getRequestURI(),searchField, searchWord) %>
+        	</ul>
         	</td>
             <td><button type="button" onclick="location.href='Write.jsp';">글쓰기
                 </button></td>
